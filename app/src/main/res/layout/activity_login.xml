@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+
+
+    tools:context=".LoginActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        >
+
+        <ImageView
+            android:id="@+id/instaIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@mipmap/ic_instagram_background" />
+
+        <EditText
+        android:id="@+id/instaUserName"
+        android:layout_below="@id/instaIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="username"/>
+    <EditText
+        android:id="@+id/instaPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instaUserName"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"/>
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_marginTop="46dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instaPassword"
+        android:background="#515BD4"
+        android:text="Login"/>
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginButton"
+            android:layout_marginTop="16dp"
+            android:background="#8134AF"
+            android:text="Sign Up"/>
+    </RelativeLayout>
+
+</RelativeLayout>

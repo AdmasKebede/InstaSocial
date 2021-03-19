@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/instagramCamera"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+    <item
+        android:id="@+id/instagramMessage"
+        android:icon="@mipmap/ic_share"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+    <item
+        android:id="@+id/instagramLogo"
+        android:icon="@mipmap/ic_instagram_background"
+        app:showAsAction="ifRoom"
+        android:title="Compose">
+    </item>
+    <item
+        android:id="@+id/instagramTv"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+
+
+</menu>
