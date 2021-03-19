@@ -21,11 +21,11 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
 - [X] user can like posts
 - [X] user can see other's post
 - [X] user can have a profile picture
 - [X] added a notification text at login and dyring acount creation
+- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
