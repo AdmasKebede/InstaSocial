@@ -25,6 +25,7 @@ The following **additional** features are implemented:
 - [X] user can like posts
 - [X] user can see other's post
 - [X] user can have a profile picture
+- [X] added a notification text at login and dyring acount creation
 
 ## Video Walkthrough
 
