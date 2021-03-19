@@ -9,7 +9,18 @@
 
 
     tools:context=".LoginActivity">
+    <TextView
+        android:id="@+id/notificationText"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#FF0000"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/logBoxContainer"
+        />
     <RelativeLayout
+        android:id="@+id/logBoxContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String TAG = "LoginActivity";
     private EditText userName;
     private EditText password;
+    private TextView notificationText;
     private Button loginButton;
     private Button signUpButton;
 
@@ -36,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.instaPassword);
         loginButton = findViewById(R.id.loginButton);
         signUpButton = findViewById(R.id.signUpButton);
+        notificationText = findViewById(R.id.notificationText);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +52,26 @@ public class LoginActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String username=userName.getText().toString();
                 String pass=password.getText().toString();
-                createUserAccount(username,pass);
+
+                if(username==null|| pass==null|| pass.length()<3){
+                    String message="";
+                    if(username==null){
+                        message="User Name can not be empty!";
+                    }
+                    if(pass==null){
+                        message="Password can not be empty!";
+                    }
+                    if(pass!=null && pass.length()<3){
+                        message="Password too short!";
+                    }
+                    notificationText.setText(message);
+                }else{
+                    createUserAccount(username,pass);
+                }
+
             }
         });
 
@@ -65,7 +85,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void done(ParseException e) {
                 if(e==null){
-                    Toast.makeText(LoginActivity.this, "You have created a new account! ", Toast.LENGTH_SHORT).show();
+                    userName.setText("");
+                    password.setText("");
+                    notificationText.setText("You have successfully created your account!");
                 }else{
                     Log.d(TAG,e.toString());
                 }
@@ -80,7 +102,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if(e!=null){
-                    Log.e(TAG,"issue with login");
+                    notificationText.setText("Wrong User name or password! Please use the correct credentials.");
+
                 } else {
                     goMainActivity();
                 }
