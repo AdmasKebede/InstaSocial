@@ -32,6 +32,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/AdmasKebede/InstaSocial/blob/master/InstaWalkThrough.gif' title='Video Walkthrough' width='' alt='Finsta Walkthrough' />
+<img src=https://github.com/AdmasKebede/InstaSocial/blob/master/InstaWalkThrough2.gif' title='Video Walkthrough' width='' alt='Finsta Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
