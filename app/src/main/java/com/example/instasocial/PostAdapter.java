@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.parse.ParseFile;
 
 import org.w3c.dom.Text;
@@ -34,6 +35,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         private TextView userName;
         private TextView description;
         private ImageView postImage;
+        private ShapeableImageView profilePicture;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -41,6 +43,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             userName=itemView.findViewById(R.id.userName);
             description = itemView.findViewById(R.id.textDescription);
             postImage = itemView.findViewById(R.id.imagePost);
+            profilePicture = itemView.findViewById(R.id.myShapableImageView);
 
         }
 
@@ -50,12 +53,20 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             ParseFile image = post.getImage();
             if(image!=null){
             Glide.with(context).load(post.getImage().getUrl()).into(postImage);
+                Glide.with(context).load(post.getImage().getUrl()).into(profilePicture);
             }
         }
     }
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
 
-
-    @NonNull
+    public void addAll(List<Post> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
+        @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view =LayoutInflater.from(context).inflate(R.layout.item_post,parent,false);
